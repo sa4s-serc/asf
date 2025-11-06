@@ -1,0 +1,16 @@
+site_name: Moya Documentation
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Agents: agents.md
+  - Memory: memory.md
+  - Tools: tools.md
+  - Orchestrators: orchestrators.md
+  - API Reference: reference.md
+  - Examples: examples.md
+
+theme:
+  name: material
+
+plugins:
+  - search
