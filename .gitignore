@@ -1,32 +1,3 @@
-# Byte-compiled
+.env
 __pycache__/
-
-# Distribution / packaging
-.Python
-build/
-dist/
-wheels/
-MANIFEST
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# VSCode
-.vscode/
-
-# git
-.git/
-.github/
-
-# venv
-venv/
-
-# egg-info
-*.egg-info/
-
-*/.env
-tmp/
-
-*/envsource.sh
-
-venv
+service_5*

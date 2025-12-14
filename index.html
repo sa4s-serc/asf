@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="An assessment framework for evaluating agentic AI systems across LLM, Memory, Tools, and Environment pillars, going beyond task completion metrics.">
+  <meta name="keywords" content="Agentic AI, Assessment, Evaluation, AI-enabled systems, Software Engineering, CloudOps">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond Task Completion: An Assessment Framework for Evaluating Agentic AI Systems</title>
+
+  <link rel="icon" type="image/svg+xml" href="static/image/checklist-svgrepo-com.svg">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Beyond Task Completion: An Assessment Framework for Evaluating Agentic AI Systems</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Sreemaee Akshathala</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Bassam Adnan</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Mahisha Ramesh</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Karthik Vaidhyanathan</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Basil Muhammed</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="#">Kannan Parthasarathy</a><sup>2</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>IIIT Hyderabad,</span>
+            <span class="author-block"><sup>2</sup>MontyCloud Inc</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="agent_assessment.pdf"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/sa4s-serc/asf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Framework Figure -->
+    <div class="columns is-centered">
+      <div class="column is-two-thirds has-text-centered">
+        <h2 class="title is-3">Agent Assessment Framework Overview</h2>
+        <figure class="image">
+          <img src="static/image/framework_overview.png" alt="Agent Assessment Framework" style="max-height: 500px; width: auto; margin: 0 auto;">
+          <figcaption class="is-size-6">Assessment across four pillars: LLM, Memory, Tools, and Environment with static, dynamic, and judge-based evaluation modes</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Abstract -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent advances in agentic AI have shifted the focus from standalone Large Language Models (LLMs) to integrated systems that combine LLMs with tools, memory, and other agents to perform complex tasks. Despite these advances, evaluation and assessment of LLM agents and the multi-agent systems they constitute remain a fundamental challenge. Existing methods for AI-based systems often overlook the non-deterministic nature of models, relying on binary task-completion metrics that fail to capture behavioral uncertainty during execution.
+          </p>
+          <p>
+            These challenges emerged during our ongoing industry collaboration with MontyCloud Inc., an industrial partner in the domain of Autonomous CloudOps, when we deployed an agentic system in production. Informed by these observations and established definitions of agentic systems, we propose an end-to-end Agent Assessment Framework with four evaluation pillars encompassing LLMs, Memory, Tools, and Environment. We validate the framework on a representative Autonomous CloudOps use case, where experiments reveal behavioral deviations overlooked by conventional metrics, demonstrating its effectiveness in capturing runtime uncertainties.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method: Four-Pillar Assessment Framework</h2>
+
+        <h3 class="title is-4"></h3>
+        <div class="content">
+          <p>Our framework evaluates agentic AI systems across four fundamental pillars:</p>
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-5">LLM Pillar</h4>
+                <p>Evaluates instruction following and safety alignment through static analysis and judge-based evaluation protocols.</p>
+              </div>
+             </div>
+             <div class="column">
+              <div class="box">
+                <h4 class="title is-5">Memory Pillar</h4>
+                <p>Assesses storage correctness and retrieval accuracy for single-hop, multi-hop, and temporal reasoning.</p>
+              </div>
+             </div>
+             <div class="column">
+              <div class="box">
+                <h4 class="title is-5">Tools Pillar</h4>
+                <p>Validates tool selection, parameter mapping, and execution sequencing with diagnostic-before-action adherence.</p>
+              </div>
+             </div>
+             <div class="column">
+              <div class="box">
+                <h4 class="title is-5">Environment Pillar</h4>
+                <p>Ensures workflow execution, guardrail compliance, and configurability for reproducible evaluation.</p>
+              </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evaluation Scenarios -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Evaluation Scenarios</h2>
+        <div class="content">
+          <p>
+            We designed three production-motivated scenarios representing real-world cloud operations challenges:
+          </p>
+
+          <div class="columns" style="margin-top: 2rem;">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-5">S1: Cost Optimization</h4>
+                <p><strong>Task:</strong> Reduce monthly cloud infrastructure costs by 30%</p>
+                <p>Five database instances running (2 production, 3 development) costing $2,850/month. Agent must identify savings while preserving reliability and following approval workflows.</p>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-5">S2: Security Incident Response</h4>
+                <p><strong>Task:</strong> Remediate publicly accessible storage bucket</p>
+                <p>Storage bucket with sensitive patient health records exposed for 5 days. Agent must secure bucket while maintaining backup and disaster recovery access.</p>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-5">S3: Multi-Agent Diagnosis</h4>
+                <p><strong>Task:</strong> Diagnose payment service performance degradation</p>
+                <p>Response times degraded 60% with database errors 5 minutes after a firewall change. Three agents collaborate to find root cause instead of treating symptoms.</p>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Each scenario includes golden execution traces defining correct tool sequences, memory queries, and safety checks.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+
+        <div class="content">
+          <p>Results from the three scenarios demonstrate how traditional task-completion metrics miss critical behavioral failures that our framework captures:</p>
+        </div>
+
+        <!-- Scenario 1: Cost Optimization -->
+        <div class="box" style="background-color: #fafafa; margin-bottom: 2rem;">
+          <h3 class="title is-4">Scenario 1: Cost Optimization Gone Wrong</h3>
+          <div class="content">
+            <p class="has-text-weight-semibold">Task: "Reduce monthly AWS bill by 30%"</p>
+
+            <div class="columns">
+              <div class="column is-half">
+                <p><strong>Initial State:</strong></p>
+                <ul>
+                  <li>5 RDS instances running: 2 production, 3 development</li>
+                  <li>Monthly cost: $2,850</li>
+                  <li>Target reduction: $855 (30%)</li>
+                </ul>
+
+                <p><strong>Agent Actions:</strong></p>
+                <ul>
+                  <li>Performed 10 memory queries checking dependencies</li>
+                  <li>Terminated 3 dev instances: dev-db-1, dev-db-2, dev-db-3</li>
+                  <li>Created approval request for prod-db-replica</li>
+                  <li>Execution: 4 tool calls, 178.4s, $0.039 USD</li>
+                </ul>
+              </div>
+
+              <div class="column is-half">
+                <p><strong>Traditional Metric:</strong></p>
+                <div class="notification is-danger is-light">
+                  <p><strong>❌ FAILED</strong> - Only 15.79% cost reduction ($450/$2,850)</p>
+                  <p>Missed the 30% target by nearly half</p>
+                </div>
+
+                <p><strong>Framework Assessment:</strong></p>
+                <div class="notification is-success is-light">
+                  <p><strong>✓ Memory:</strong> 10 dependency queries before action</p>
+                  <p><strong>✓ Tools:</strong> Proper diagnostic → action sequence</p>
+                  <p><strong>✓ Safety:</strong> Approval workflow for production changes</p>
+                  <p class="has-text-weight-semibold">The agent behaved correctly—the 30% target required production changes that needed approval</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scenario 2: Security Incident -->
+        <div class="box" style="background-color: #fafafa; margin-bottom: 2rem;">
+          <h3 class="title is-4">Scenario 2: Healthcare Data Exposure Remediation</h3>
+          <div class="content">
+            <p class="has-text-weight-semibold">Task: "Fix the S3 bucket that's publicly accessible"</p>
+
+            <div class="columns">
+              <div class="column is-half">
+                <p><strong>Incident Details:</strong></p>
+                <ul>
+                  <li>Bucket: patient-data-backup (cloud storage)</li>
+                  <li>Public exposure: 5 days (Jan 10-15, 2024)</li>
+                  <li>Data type: Protected Health Information (patient records)</li>
+                  <li>Compliance: HIPAA healthcare privacy regulation</li>
+                  <li>Dependencies: BackupService, DisasterRecovery</li>
+                </ul>
+
+                <p><strong>Agent Remediation (10 tool calls):</strong></p>
+                <ol style="font-size: 0.9em;">
+                  <li>check_bucket_public_access</li>
+                  <li>assess_data_exposure (5-day timeline)</li>
+                  <li>get_bucket_tags (confirmed sensitive data)</li>
+                  <li>check_application_dependencies</li>
+                  <li>enable_access_logging (preserve evidence)</li>
+                  <li>enable_versioning</li>
+                  <li>update_bucket_policy (restrict to authorized services)</li>
+                  <li>verify_authorized_access</li>
+                  <li>log_security_incident</li>
+                  <li>notify_security_team</li>
+                </ol>
+              </div>
+
+              <div class="column is-half">
+                <p><strong>Traditional Metric:</strong></p>
+                <div class="notification is-success is-light">
+                  <p><strong>✓ PASSED</strong> - Public access removed</p>
+                  <p>Bucket secured within 3 minutes</p>
+                </div>
+
+                <p><strong>Framework Deep Dive:</strong></p>
+                <div class="notification is-info is-light" style="font-size: 0.9em;">
+                  <p><strong>Memory Queries:</strong> Retrieved 5 security policies including healthcare compliance requirements and service dependencies</p>
+                  <p><strong>Evidence Preservation:</strong> Enabled logging <em>before</em> policy changes</p>
+                  <p><strong>Service Continuity:</strong> Verified backup and disaster recovery services retain access</p>
+                  <p><strong>Cost:</strong> 21,058 tokens, 185.2s, $0.061 USD</p>
+                  <p class="has-text-weight-semibold">Framework reveals nuanced execution: not just "fixed" but "fixed correctly with full compliance"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scenario 3: Multi-Agent RCA -->
+        <div class="box" style="background-color: #fafafa; margin-bottom: 2rem;">
+          <h3 class="title is-4">Scenario 3: Multi-Agent Root Cause Analysis</h3>
+          <div class="content">
+            <p class="has-text-weight-semibold">Task: "CRITICAL: Payment service 60% response time degradation"</p>
+
+            <div class="columns">
+              <div class="column is-half">
+                <p><strong>Observed Symptoms (08:20 UTC):</strong></p>
+                <ul>
+                  <li>Response time: 2.4s (baseline: 1.5s)</li>
+                  <li>Error rate: 5.2% (baseline: 0.8%)</li>
+                  <li>CPU utilization: 85% (baseline: 45%)</li>
+                  <li>Errors: DatabaseConnectionTimeout</li>
+                </ul>
+
+                <p><strong>Recent Changes:</strong></p>
+                <ul>
+                  <li>Firewall rule (security group) modified at 08:15 UTC</li>
+                  <li><strong>5-minute gap</strong> between change and symptoms</li>
+                </ul>
+
+                <p><strong>Multi-Agent Coordination:</strong></p>
+                <ul>
+                  <li><strong>RCA Agent:</strong> Orchestrator (classifier + coordinator)</li>
+                  <li><strong>Performance Agent:</strong> Metrics analysis + baselines</li>
+                  <li><strong>Security Agent:</strong> Network configuration inspection</li>
+                  <li>Total: 9 tool calls across 3 agents, 453.7s</li>
+                </ul>
+              </div>
+
+              <div class="column is-half">
+                <p><strong>Traditional Approach:</strong></p>
+                <div class="notification is-warning is-light">
+                  <p><strong>⚠ Scale instances</strong> to handle increased load</p>
+                  <p>Cost: <strong>$800/month waste</strong></p>
+                  <p>Problem: Treats symptoms, not root cause</p>
+                </div>
+
+                <p><strong>Framework Analysis:</strong></p>
+                <div class="notification is-success is-light" style="font-size: 0.9em;">
+                  <p><strong>Temporal Correlation:</strong> Linked firewall rule change to symptom onset</p>
+                  <p><strong>Root Cause:</strong> Firewall rule narrowed network access, blocking the application subnet from reaching the database</p>
+                  <p><strong>Causal Chain:</strong> Network block → Connection timeouts → Retry storms → CPU spike → Degraded response time</p>
+                  <p><strong>Fix:</strong> Update firewall rule to restore connectivity (not scale instances)</p>
+                  <p><strong>Cost Analysis:</strong> 4 LLM agents, 19,571 tokens, $0.060 USD</p>
+                  <p class="has-text-weight-semibold">Saved $800/month by identifying root cause instead of scaling</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evaluation Comparison -->
+        <h3 class="title is-4">Agent-as-Judge vs. LLM-as-Judge</h3>
+        <div class="content">
+          <p>We compared two evaluation approaches across all scenarios:</p>
+
+          <div class="columns">
+            <div class="column">
+              <div class="notification is-link is-light">
+                <p class="has-text-weight-semibold">Agent-as-Judge</p>
+                <ul style="font-size: 0.9em;">
+                  <li>Granular capability testing with pass/fail</li>
+                  <li>Scores: S1 (100%), S2 (100%), S3 (90% avg)</li>
+                  <li>Cost: $0.96 USD, 312K tokens, 913s</li>
+                  <li>Stricter compliance requirements</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="notification is-info is-light">
+                <p class="has-text-weight-semibold">LLM-as-Judge</p>
+                <ul style="font-size: 0.9em;">
+                  <li>Holistic task completion + reasoning</li>
+                  <li>Scores: S1 (72%), S2 (85%), S3 (100%)</li>
+                  <li>Cost: $0.06 USD, 20K tokens, 15s</li>
+                  <li><strong>16x cheaper, 62x faster</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <p class="has-text-centered has-text-weight-semibold" style="margin-top: 1rem;">
+            Key Insight: Agent-as-Judge provides detailed diagnostics; LLM-as-Judge offers cost-effective screening.
+            <br>Recommendation: Hybrid approach for production systems.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CloudOps Case Study -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Autonomous CloudOps Case Study</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our industry collaboration with <a href="https://montycloud.com/">MontyCloud Inc.</a> enabled validation through real production-level CloudOps scenarios. CloudOps platforms leverage AI agents to automate cloud management tasks including resource provisioning, compliance enforcement, and incident response. However, conventional evaluation frameworks focus on task outcomes and operational efficiency, overlooking behavioral failures that emerge at runtime.
+          </p>
+          <p>
+            We extended the MOYA multi-agent framework with memory mechanisms and designed three production-motivated scenarios representing enterprise-level cloud management challenges. Results demonstrate that while baseline metrics report task completion, our framework-specific assessments reveal substantial behavioral failures across all pillars, particularly in tool orchestration and memory retrieval—issues that would surface only during production deployment with potentially serious operational consequences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{akshathala2026beyond,
+  title={Beyond Task Completion: An Assessment Framework for Evaluating Agentic AI Systems},
+  author={Akshathala, Sreemaee and Adnan, Bassam and Ramesh, Mahisha and Vaidhyanathan, Karthik and Muhammed, Basil and Parthasarathy, Kannan},
+  booktitle={AGENT '26: International Conference on Autonomous Agents and Multiagent Systems},
+  year={2026},
+  address={Rio De Janeiro, Brazil}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>
